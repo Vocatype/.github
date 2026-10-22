@@ -1,15 +1,12 @@
 // 조직 프로필의 개발 기록을 갱신한다.
-// Vocatype/vocatype main의 커밋으로 잔디 그래프(라이트·다크 SVG)를 그리고,
-// 병합 커밋으로 profile/README.md의 "최근 작업" 표를 다시 쓴다. 외부 패키지 없이 Node 20+에서 돈다.
-import { readFile, writeFile } from 'node:fs/promises'
+// Vocatype/vocatype main의 커밋으로 잔디 그래프(라이트·다크 SVG)를 그린다. 외부 패키지 없이 Node 20+에서 돈다.
+import { writeFile } from 'node:fs/promises'
 
 const REPO = process.env.SOURCE_REPO ?? 'Vocatype/vocatype'
 const BRANCH = process.env.SOURCE_BRANCH ?? 'main'
 const TOKEN = process.env.GITHUB_TOKEN ?? ''
 const TIME_ZONE = 'Asia/Seoul'
 const WEEKS = 26
-const RECENT = 8
-const README = new URL('../profile/README.md', import.meta.url)
 const SVG = (theme) => new URL(`../profile/activity-${theme}.svg`, import.meta.url)
 
 async function api(path) {
@@ -108,40 +105,7 @@ function renderSvg(theme, perDay, today, stats) {
   )}">\n${parts.join('\n')}\n</svg>\n`
 }
 
-/** 병합 커밋마다 그 브랜치에만 있던 커밋들을 찾아, 문서가 아닌 첫 커밋 제목을 작업 요약으로 쓴다. */
-function recentWork(commits, folders) {
-  const bySha = new Map(commits.map((c) => [c.sha, c]))
-  const ancestors = (sha) => {
-    const seen = new Set()
-    const stack = [sha]
-    while (stack.length) {
-      const next = stack.pop()
-      if (seen.has(next) || !bySha.has(next)) continue
-      seen.add(next)
-      for (const parent of bySha.get(next).parents) stack.push(parent.sha)
-    }
-    return seen
-  }
-  const rows = []
-  for (const commit of commits) {
-    if (rows.length >= RECENT) break
-    const match = /^Merge branch '([a-z]+)\/(\d{3})-([^']+)'/.exec(commit.commit.message)
-    if (!match || commit.parents.length < 2) continue
-    const [, type, number, name] = match
-    const folder = `${number}-${type}-${name}`
-    const onMain = ancestors(commit.parents[0].sha)
-    const own = [...ancestors(commit.parents[1].sha)].filter((sha) => !onMain.has(sha)).map((sha) => bySha.get(sha))
-    own.sort((a, b) => a.commit.committer.date.localeCompare(b.commit.committer.date))
-    const subjects = own.map((c) => c.commit.message.split('\n')[0])
-    const summary = subjects.find((s) => !/^docs[(:]/.test(s)) ?? subjects[0] ?? `${type}/${number}-${name}`
-    const link = folders.has(folder) ? `https://github.com/${REPO}/tree/${BRANCH}/branches/${folder}` : `https://github.com/${REPO}/commit/${commit.sha}`
-    rows.push(`| [${number}](${link}) | ${summary.replace(/\|/g, '\\|')} | ${dayOf(commit.commit.committer.date)} |`)
-  }
-  return ['| 번호 | 작업 | 병합 |', '| --- | --- | --- |', ...rows].join('\n')
-}
-
 const commits = await allCommits()
-const folders = new Set((await api(`/repos/${REPO}/contents/branches?ref=${BRANCH}`)).filter((e) => e.type === 'dir').map((e) => e.name))
 const perDay = new Map()
 for (const commit of commits) {
   const day = dayOf(commit.commit.author.date)
@@ -158,9 +122,4 @@ const stats = {
 
 for (const theme of Object.keys(THEMES)) await writeFile(SVG(theme), renderSvg(theme, perDay, today, stats))
 
-const readme = await readFile(README, 'utf8')
-const block = `<!-- activity:start -->\n${recentWork(commits, folders)}\n<!-- activity:end -->`
-const next = readme.replace(/<!-- activity:start -->[\s\S]*?<!-- activity:end -->/, block)
-if (next === readme && !readme.includes('<!-- activity:start -->')) throw new Error('README에 activity 표시가 없습니다')
-await writeFile(README, next)
 console.log(`commits ${stats.commits}, merges ${stats.merges}, first ${first}, today ${today}`)

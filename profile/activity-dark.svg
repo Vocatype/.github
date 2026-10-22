@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="426" height="203" viewBox="0 0 426 203" role="img" aria-label="커밋 기록: 커밋 186, 작업 27">
+<svg xmlns="http://www.w3.org/2000/svg" width="426" height="203" viewBox="0 0 426 203" role="img" aria-label="커밋 기록: 커밋 193, 작업 28">
 <text x="0" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="15" font-weight="600" fill="#f0f6fc">커밋 기록</text>
-<text x="0" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" fill="#9198a1">커밋 186 · 작업 27 · 2026-10-19 시작 · 4일째</text>
+<text x="0" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="12" fill="#9198a1">커밋 193 · 작업 28 · 2026-10-19 시작 · 4일째</text>
 <rect x="28" y="64" width="12" height="12" rx="2.5" fill="#21262d"><title>2026-04-26 커밋 0</title></rect>
 <rect x="28" y="79" width="12" height="12" rx="2.5" fill="#21262d"><title>2026-04-27 커밋 0</title></rect>
 <rect x="28" y="94" width="12" height="12" rx="2.5" fill="#21262d"><title>2026-04-28 커밋 0</title></rect>
@@ -186,7 +186,7 @@
 <rect x="403" y="79" width="12" height="12" rx="2.5" fill="#b3a9ff"><title>2026-10-19 커밋 49</title></rect>
 <rect x="403" y="94" width="12" height="12" rx="2.5" fill="#b3a9ff"><title>2026-10-20 커밋 121</title></rect>
 <rect x="403" y="109" width="12" height="12" rx="2.5" fill="#21262d"><title>2026-10-21 커밋 0</title></rect>
-<rect x="403" y="124" width="12" height="12" rx="2.5" fill="#7465fb"><title>2026-10-22 커밋 16</title></rect>
+<rect x="403" y="124" width="12" height="12" rx="2.5" fill="#7465fb"><title>2026-10-22 커밋 23</title></rect>
 <text x="0" y="89" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="10" fill="#9198a1">월</text>
 <text x="0" y="119" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="10" fill="#9198a1">수</text>
 <text x="0" y="149" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="10" fill="#9198a1">금</text>

@@ -9,30 +9,45 @@
   <sub>A portrait drawn by your voice</sub>
 </p>
 
-<p align="center">
-  <a href="https://vocatype.hs827.workers.dev"><b>서비스 바로 가기</b></a> ·
-  <a href="https://github.com/Vocatype/vocatype">저장소</a> ·
-  <a href="https://github.com/Vocatype/vocatype/tree/main/branches">작업 문서</a>
-</p>
+<h3 align="center">
+  <a href="https://vocatype.hs827.workers.dev">vocatype.hs827.workers.dev →</a>
+</h3>
+
+<p align="center"><sub>설치 없이 브라우저에서 바로 · PC와 모바일 모두</sub></p>
 
 ## 화면
 
+### PC 웹
+
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/landing-dark.jpg">
-    <img src="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/landing-light.jpg" width="190" alt="메인 화면">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/pc-landing-dark.jpg">
+    <img src="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/pc-landing-light.jpg" width="49%" alt="PC 메인 화면">
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/record-dark.jpg">
-    <img src="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/record-light.jpg" width="190" alt="녹음 화면: 낭독할 글">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/pc-result-dark.jpg">
+    <img src="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/pc-result-light.jpg" width="49%" alt="PC 결과 화면: AI 초상과 보이스 타입">
+  </picture>
+</p>
+
+### 모바일 웹
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/m-landing-dark.jpg">
+    <img src="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/m-landing-light.jpg" width="190" alt="모바일 메인 화면">
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/result-dark.jpg">
-    <img src="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/result-light.jpg" width="190" alt="결과 화면: AI 초상과 보이스 타입">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/m-record-dark.jpg">
+    <img src="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/m-record-light.jpg" width="190" alt="모바일 녹음 화면: 낭독할 글">
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/reading-dark.jpg">
-    <img src="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/reading-light.jpg" width="190" alt="결과 화면: 목소리 해설과 퍼스널 컬러">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/m-result-dark.jpg">
+    <img src="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/m-result-light.jpg" width="190" alt="모바일 결과 화면: AI 초상과 보이스 타입">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/m-reading-dark.jpg">
+    <img src="https://raw.githubusercontent.com/Vocatype/.github/main/profile/images/m-reading-light.jpg" width="190" alt="모바일 결과 화면: 목소리 해설과 퍼스널 컬러">
   </picture>
 </p>
 <p align="center"><sub>메인 → 녹음 → 결과(초상·타입) → 결과(해설·퍼스널 컬러). GitHub 테마에 따라 라이트·다크 화면이 바뀌어 보입니다.</sub></p>
@@ -72,22 +87,7 @@ React · TypeScript · Vite / Cloudflare Workers · Workers AI · Claude API
   <img src="https://raw.githubusercontent.com/Vocatype/.github/main/profile/activity-light.svg" alt="Vocatype/vocatype 커밋 기록 그래프">
 </picture>
 
-**최근 작업**
-
-<!-- activity:start -->
-| 번호 | 작업 | 병합 |
-| --- | --- | --- |
-| [027](https://github.com/Vocatype/vocatype/tree/main/branches/027-feature-personal-color-card) | feat(export): 공유 카드를 기본 테마 + 퍼스널 컬러 톤(아우라·원형 파형)으로, 원형 파형 정규화 개선 | 2026-10-22 |
-| [026](https://github.com/Vocatype/vocatype/tree/main/branches/026-fix-reading-label-ko) | fix(result): 결과 화면 '목소리 리딩' → '목소리 해설', README 용어 안내 | 2026-10-22 |
-| [024](https://github.com/Vocatype/vocatype/tree/main/branches/024-fix-reading-fallback-reserve) | fix(ai-adapter): 리딩 체인이 뒤 제공자 몫 10초를 남기고 앞 제공자에 신호를 준다 | 2026-10-20 |
-| [025](https://github.com/Vocatype/vocatype/tree/main/branches/025-feature-generating-loader) | feat(generating): 생성 대기 음파 로더, 초상 실패 문구를 실제 상황에 맞게 | 2026-10-20 |
-| [023](https://github.com/Vocatype/vocatype/tree/main/branches/023-fix-portrait-timeout) | fix(ai-adapter): Workers AI 초상 호출에 서버 상한 45초 | 2026-10-20 |
-| [018](https://github.com/Vocatype/vocatype/tree/main/branches/018-feature-axis-export) | feat(export): 결과 화면에 보정용 JSON 내보내기 추가(?calibrate=1일 때만) | 2026-10-20 |
-| [021](https://github.com/Vocatype/vocatype/tree/main/branches/021-refactor-generation-orchestration) | test(ai): runGeneration 흐름 테스트 19개 | 2026-10-20 |
-| [020](https://github.com/Vocatype/vocatype/tree/main/branches/020-refactor-contract-cleanup) | refactor(locale): 지원 언어를 shared/locale.ts 한 곳에서 정하고 리딩 계약·카탈로그·Worker 검증이 이를 따르게 함 | 2026-10-20 |
-<!-- activity:end -->
-
-<sub>6시간마다 GitHub Actions가 <a href="https://github.com/Vocatype/vocatype/commits/main">main 커밋</a>을 읽어 위 그래프와 표를 갱신합니다.</sub>
+<sub>main 브랜치 커밋을 6시간마다 GitHub Actions가 읽어 다시 그립니다.</sub>
 
 ## 개발자
 
@@ -97,3 +97,13 @@ React · TypeScript · Vite / Cloudflare Workers · Workers AI · Claude API
     <td align="center"><a href="https://github.com/eric91405"><img src="https://github.com/eric91405.png" width="64" height="64" alt=""><br>@eric91405</a></td>
   </tr>
 </table>
+
+---
+
+<p align="center">
+  <sub>
+    <a href="https://github.com/Vocatype/vocatype">저장소</a> ·
+    <a href="https://github.com/Vocatype/vocatype/tree/main/branches">작업 문서</a> ·
+    <a href="https://github.com/Vocatype/vocatype/commits/main">커밋 기록</a>
+  </sub>
+</p>
